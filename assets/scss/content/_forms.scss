@@ -1,0 +1,206 @@
+div.wpforms-container {
+  &.wpforms-container-full {
+    float: left;
+    width: 100%;
+  }
+
+ div.wpforms-field-container {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-flow: row wrap;
+   align-content: stretch;
+
+   .form-column-1 {
+     flex: 1 0 50%;
+     //float: left;
+     //width: 50%;
+     clear: none !important;
+     padding-right: 15px;
+   }
+   .form-column-2 {
+     flex: 0 0 50%;
+     //float: right;
+     //width: 50%;
+     clear: none !important;
+     padding-left: 15px;
+   }
+
+   .form-column-1,
+   .form-column-2 {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     align-items: flex-start;
+     justify-content: flex-end;
+
+
+     &.wpforms-has-error {
+       > label {
+         color: #ff0000 !important;
+       }
+     }
+
+     > label {
+       flex: 1 0 30%;
+       text-align: right;
+       padding-right: 20px;
+       font-size: 20px !important;
+
+       &.wpforms-error {
+         display: none !important;
+       }
+     }
+
+     > select,
+     > textarea,
+     > input {
+       flex: 0 1 70%;
+       width: auto !important;
+       border-radius: 30px !important;
+       border: 1px solid #333F48 !important;
+       max-width: none !important;
+     }
+
+     > select {
+       -moz-appearance: none;
+       -webkit-appearance: none;
+       appearance: none;
+     }
+
+     &.wpforms-field-textarea {
+       align-items: flex-start;
+       > label {
+         margin-top: 10px;
+         //flex: 1 1 50%;
+       }
+
+       > textarea {
+         min-height: 200px;
+         padding: 15px;
+       }
+     }
+
+     &.form-field-jugendliche {
+       > label {
+         max-width: 200px;
+       }
+     }
+
+     &.form-field-kinder {
+       > label {
+         max-width: 150px;
+       }
+     }
+   }
+
+
+ }
+
+  .wpforms-submit-container {
+    float: left;
+    width: 100%;
+    position: relative;
+    &:before {
+      content: '';
+      width: 100%;
+      height: 6px;
+      display: inline-block;
+      top: 10px;
+      background: url(../images/Footer_Linie@2x.png) center center repeat-x;
+      background-size: 100% 6px;
+    }
+
+    &:after {
+      content: '*Pflichtfeld';
+      position: absolute;
+      left: 0px;
+      bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    button {
+      float: right !important;
+      border-radius: 30px;
+      border: 0 !important;
+      background-color: $primary-light !important;
+      font-family: $font-headline !important;
+      color: $primary !important;
+      padding: 0 20px !important;
+      font-size: 25px !important;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 30px !important;
+    }
+
+  }
+
+  @include media-breakpoint-down(md) {
+    .wpforms-field.form-column-1,
+    .wpforms-field.form-column-2 {
+      flex: 1 1 100% !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      > label {
+        flex: 1 1 100% !important;
+        text-align: left !important;
+        max-width: none !important;
+      }
+
+      > select,
+      > textarea,
+      > input {
+        flex: 1 1 100% !important;
+        max-width: none !important;
+      }
+
+      &:nth-child(2) {
+        order: 9;
+      }
+
+      &:nth-child(4) {
+        order: 10;
+      }
+
+      &:nth-child(6) {
+        order: 11;
+      }
+
+      &:nth-child(8) {
+        order: 12;
+      }
+
+      &:nth-child(10) {
+        order: 13;
+      }
+
+      &:nth-child(12) {
+        order: 14;
+      }
+
+      &:nth-child(16) {
+        order: 15;
+      }
+
+    }
+  }
+}
+
+.entry-content .wpforms-confirmation-container-full {
+  border: 0;
+  background-color: #B8DDE1;
+  border-radius: 30px;
+  padding: 20px;
+
+  p {
+    font-family: "Lobster Two",cursive;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #00677F;
+  }
+}

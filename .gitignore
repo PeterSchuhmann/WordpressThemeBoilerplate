@@ -1,0 +1,4 @@
+node_modules/
+ubuntu-xenial-16.04-cloudimg-console.log
+package-lock.json
+.DS_Store
